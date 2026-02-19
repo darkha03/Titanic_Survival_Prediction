@@ -30,14 +30,24 @@ Instead of relying only on the raw data, I created new features to give the mode
 * **Title Extraction:** Extracted titles (Mr, Mrs, Miss, Master) from the `Name` column. This allowed the model to differentiate between adult men (Mr) and male children (Master), capturing the "women and children first" historical context.
 * **Family Size:** Combined `SibSp` (siblings/spouse) and `Parch` (parents/children) to see how family dynamics affected survival.
 
-## ⚙️ Model Training & Results
-I split the training data (80/20) to validate my model locally before submitting it to Kaggle.
-* **Algorithm:** Random Forest Classifier 
-* **Validation Accuracy:** ~84%
-* **Final Kaggle Test Accuracy:** 77%
+## ⚙️ Model Training, Tuning & Results
+I split the training data (80/20) to validate my models locally before submitting to Kaggle. 
+
 ### Model Comparison
-I tested both Random Forest and Logistic Regression (with Feature Scaling). The Random Forest outperformed Logistic Regression (84% vs 70%), indicating that the survival patterns in the Titanic dataset are highly non-linear and rely on complex conditional rules that a linear model cannot easily capture.
-The slight drop between validation and test accuracy demonstrates mild overfitting, which is expected. The model successfully generalized the core patterns of the dataset.
+I tested three distinct algorithms to find the best fit for the data's structure:
+1. **Logistic Regression (with Feature Scaling):** Achieved ~70% accuracy. The linear nature of this model struggled to capture the highly conditional rules of survival.
+2. **XGBoost:** Achieved ~83% accuracy. While powerful, the small size of the dataset limited the boosting algorithm's ability to outperform simpler ensemble methods without overfitting.
+3. **Random Forest Classifier:** Outperformed the others with an **~84.5% validation accuracy**. The decision tree ensemble perfectly captured the non-linear, categorical nature of the Titanic dataset.
+
+### Hyperparameter Tuning
+
+To push the Random Forest model to its absolute limit, I utilized `GridSearchCV` to automate the tuning of the model's hyperparameters. By systematically testing combinations of `n_estimators`, `max_depth`, and `min_samples_split`, I optimized the model to balance high accuracy with resistance to overfitting.
+
+### Final Results
+* **Validation Accuracy:** ~84.5%
+* **Final Kaggle Test Accuracy:** 77%
+
+The slight drop between validation and test accuracy demonstrates mild overfitting, which is expected. The model successfully generalized the core patterns of the dataset, but ultimately reached the threshold of "irreducible error" caused by the random nature of the historical event.
 
 ## 🚀 How to Run
 1. Clone this repository.
