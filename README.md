@@ -6,7 +6,7 @@ A collection of machine learning projects solving real-world predictive challeng
 
 ### 1. 🏡 Ames House Prices: Advanced Regression Techniques
 **Challenge:** Predict the final sale price of homes in Ames, Iowa  
-**Model Performance:** MAE ~$15,000 (< 8.5% error on $180k homes)  
+**Model Performance:** MAE ~$14,000 (< 8% error on $180k homes) | 13% Kaggle test error
 **Best Algorithm:** XGBoost Regressor
 
 #### Key Highlights:
@@ -58,7 +58,7 @@ A collection of machine learning projects solving real-world predictive challeng
 
 | Project | Task | Best Model | Score |
 |---------|------|-----------|-------|
-| House Prices | Regression | XGBoost | MAE: $15,000 |
+| House Prices | Regression | XGBoost | 13% Error|
 | Titanic | Classification | Random Forest | 77% Accuracy |
 
 ## 📝 Notes

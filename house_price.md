@@ -1,7 +1,7 @@
 # 🏡 Ames House Prices: Advanced Regression Techniques
 
 **Goal:** Predict the final sale price of homes in Ames, Iowa using Machine Learning.<br>
-**Final Model MAE:** ~$15,000 (Error margin of < 8.5%)
+**Kaggle Score:** 0.13 (13% Error)
 
 ## 📌 Project Overview
 This project is my implementation of the Kaggle House Prices competition. Moving beyond binary classification (predicting categories), this project focuses on **Regression**—predicting a continuous dollar amount based on 80+ explanatory variables, ranging from square footage to neighborhood and roof style.
